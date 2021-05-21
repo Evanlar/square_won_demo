@@ -1,0 +1,61 @@
+<html>
+<head>
+  <style>
+  h1 {text-align: center;}
+  .name {text-align: center;}
+  #crypto_table {padding-left:85px; }
+  </style>
+</head>
+<body>
+  <h1> PLACE BETS </h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <h1>{{message}}</h1>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action='/start' method='POST'>
+    <div class='name'>
+      <input type="text" placeholder="Name" required='True' id='name' name='name' value='Name' >
+      <input type='text' id='email' name='email' placeholder="E-mail (used to send results)"
+      </br>
+      </br>
+      <a> Values are in USD </a>
+    </div>
+    <table id='crypto_table'>
+    <div class='form-group'>
+
+    <tbody>
+    <tr><th>    </th><th>{{coin0}}( {{coin0_USD}} )</th><th>{{coin1}}( {{coin1_USD}} )</th><th>{{coin2}}( {{coin2_USD}} )</th><th>{{coin3}}( {{coin3_USD}} )</th><th>{{coin4}}( {{coin4_USD}} )</th></tr>
+    <tr><td></td>
+        <td><input type="number" id="coin0" name='coin0' required=True
+      placeholder="USD" value=0></td>
+      <td><input type="number" id="coin1" name='coin1' required=True
+        placeholder="USD" value=0></td>
+      <td><input type="number" id="coin2" name='coin2' required=True
+        placeholder="USD" value=0></td>
+      <td><input type="number" id="coin3" name='coin3' required=True
+        placeholder="USD" value=0></td>
+      <td><input type="number" id="coin4" name='coin4' required=True
+        placeholder="USD" value=0></td></tr>
+    <tr><th>    </th><th>{{coin5}}( {{coin5_USD}} )</th><th>{{coin6}}( {{coin6_USD}} )</th><th>{{coin7}}( {{coin7_USD}} )</th><th>{{coin8}}( {{coin8_USD}} )</th><th>{{coin9}}( {{coin9_USD}} )</th></tr>
+    <tr><td></td>
+        <td><input type="number" id="coin5" name='coin5' required=True
+      placeholder="USD" value=0></td>
+      <td><input type="number" id="coin6" name='coin6' required=True
+        placeholder="USD" value=0></td>
+      <td><input type="number" id="coin7" name='coin7' required=True
+        placeholder="USD" value=0></td>
+      <td><input type="number" id="coin8" name='coin8' required=True
+        placeholder="USD" value=0></td>
+      <td><input type="number" id="coin9" name='coin9' required=True
+        placeholder="USD" value=0></td></tr>
+    </tbody>
+    </div>
+    </table>
+    <input type='submit' name='next bet' value="Submit bet">
+    <input type='submit' name = 'done' value="Done (All players added)">
+  </form>
+</body>
+<html>
